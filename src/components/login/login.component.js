@@ -1,5 +1,3 @@
-import { mapGetters, mapActions } from 'vuex'
-
 export default {
   name: 'LoginComp',
   data () {
@@ -8,20 +6,15 @@ export default {
       passfrom: ''
     }
   },
-  computed: {
-    ...mapGetters([
-      'isAuth'
-    ])
-  },
+  computed: {},
   methods: {
-    ...mapActions([
-      'saveLocalStorage'
-    ]),
     login() {
-      this.saveLocalStorage({
+      localStorage.setItem('sdc_token', JSON.stringify({
         email: this.emailfrom,
         pass: this.passfrom
-      })
+      }))
+
+      this.$router.push({ name: 'home' })
     }
   }
 }

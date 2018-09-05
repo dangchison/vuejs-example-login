@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import i18n from '@/translated/translated'
-import store from '@/store'
 import Vuetify from 'vuetify'
 
 import 'vuetify/dist/vuetify.min.css'
@@ -18,7 +17,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  i18n, store,
+  i18n,
   components: { App },
   template: '<App/>'
 })

@@ -1,5 +1,3 @@
-import { mapActions } from 'vuex'
-
 export default {
   name: 'HomeComp',
   components: {},
@@ -9,15 +7,10 @@ export default {
       drawer: null
     }
   },
-  computed: {
-
-  },
-  mounted () {
-
-  },
   methods: {
-    ...mapActions([
-      'logout'
-    ])
+    logout() {
+      localStorage.removeItem('sdc_token')
+      this.$router.push({ name: 'login' })
+    }
   }
 }
